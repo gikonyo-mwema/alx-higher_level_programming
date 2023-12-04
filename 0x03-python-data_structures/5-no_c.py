@@ -2,4 +2,4 @@
 
 
 def no_c(my_string):
-    return ''.join(char for char in my_string if char not in ('c', 'C'))
+    return "".join(ch for ch in my_string if ch not in 'cC')
