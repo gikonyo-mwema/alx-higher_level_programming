@@ -4,4 +4,16 @@ import py_compile
 
 pyfile = os.getenv('PYFILE')
 
-py_compile.compile(pyfile, cfile=pyfile + 'c')
+if pyfile is None:
+    sys.stderr.write('env var no set\n')
+    sys.exit(1)
+
+if not os.path.exists(pyfile):
+    sys.stderr.write(f'the file {pyfile} does not exist. \n')
+    sys.exit(1)
+
+try:
+    py_compile.compile(pyfile, cfile=pyfile + 'c')
+except py_compile.PyCompileError as e:
+    sys.stderr.write(f'Failed to compile {pyfile}: {e}\n')
+    sys.exit(1)
