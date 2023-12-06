@@ -1,12 +1,13 @@
+#!/usr/bin/python3
 import hidden_4
 
 
 def print_names():
-    n = dir(hidden_4)
-    for n in sorted(names):
-        if not n.startswith('__'):
+    names = dir(hidden_4)
+    for name in sorted(names):
+        if not name.startswith('__'):
             print(name)
 
 
-if __n__ == "__main__":
+if __name__ == "__main__":
     print_names()
