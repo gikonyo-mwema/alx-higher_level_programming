@@ -1,15 +1,13 @@
-#!/usr/bin/python3
-"""
-This module contains a function add_integer that adds two numbers.
+===========================
+How to Use 0-add_integer.py
+===========================
 
-The function takes two parameters: a and b. Both parameters must be integers or floats,
-otherwise a TypeError exception is raised. If the parameters are floats, they are first
-casted to integers. The function returns the sum of a and b.
+This module defines an integer addition function ``add_integer(a, b=98)``.
 
 Usage
 =====
 
-``add_integer(...)`` returns the addition of its two arguments. For numbers,
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
 that value is equivalent to using the ``+`` operator.
 
 ::
@@ -123,25 +121,3 @@ And again with NaN numbers.
     >>> add_integer(2, float('nan'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
-"""
-def add_integer(a, b=98):
-    """
-    This function adds two numbers.
-
-    Parameters:
-    a (int or float): The first number.
-    b (int or float): The second number. Default is 98.
-
-    Returns:
-    int: The sum of a and b.
-    """
-
-    if not isinstance(a, (int, float)):
-        raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
-        raise TypeError("b must be an integer")
-
-    a = int(a)
-    b = int(b)
-
-    return a + b
