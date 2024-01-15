@@ -21,15 +21,21 @@ class Rectangle(Base):
             x (int, optional): the x cordinate
             y (int, optional): the y cordinate
             id (int, optional): the identity
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0.
         """
-        super().__init__(id)
         self.width = width
         self.height = height
-        self.x = height
+        self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
+        """Gets the width"""
         return self.__width
 
     @width.setter
