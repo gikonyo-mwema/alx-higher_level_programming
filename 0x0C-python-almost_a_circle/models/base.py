@@ -9,11 +9,12 @@ The base module supplies one class, Base. For example,
 1
 """
 
+
 class Base:
     """Base model.
 
     This represents the 'base' for all other classes.
-    
+
     Private Class Attributes:
         _nb_objects (int): Number of instantiated Bases.
     """
