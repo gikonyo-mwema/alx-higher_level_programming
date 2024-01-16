@@ -5,6 +5,7 @@ This module defines the Square class which inherits from the Rectangle class.
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """
     A class to represent a square.
@@ -89,5 +90,5 @@ class Square(Rectangle):
         """
         Returns the string representation of a Square instance.
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
-
+        return ("[Square] ({}) {:d}/{:d} - {:d}".
+                format(self.id, self.x, self.y, self.width))
