@@ -40,7 +40,19 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        self.validate_integer("width", value, False)
+        """Property setter for width of rectangle.
+
+        Args:
+            value (int): width of rectangle.
+
+        Raises:
+            TypeError: if width is not an integer.
+            ValueError: if width is less than or equal to zero.
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -50,7 +62,19 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        self.validate_integer("height", value, False)
+        """Property setter for height of rectangle.
+
+        Args:
+            value (int): height of rectangle.
+
+        Raises:
+            TypeError: if height is not an integer.
+            ValueError: if height is less than or equal to zero.
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -60,7 +84,19 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        self.validate_integer("x", value)
+        """Property setter for x.
+
+        Args:
+            value (int): x.
+
+        Raises:
+            TypeError: if x is not an integer.
+            ValueError: if x is less than or equal to zero.
+        """
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -70,17 +106,20 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.validate_integer("y", value)
-        self.__y = value
+        """Property setter for y.
 
-    def validate_integer(self, name, value, eq=True):
-        """Method to validate value."""
+        Args:
+            value (int): y.
+
+        Raises:
+            TypeError: if y is not an integer.
+            ValueError: if y is less than or equal to zero.
+        """
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if eq and value < 0:
-            raise ValueError("{} must be >= 0".format(name))
-        elif not eq and value <= 0:
-            raise valueError("{} must be > 0".format(name))
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
 
     def area(self):
         """Calculate and output the area of the Rectangle."""
