@@ -76,7 +76,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        if not  isinstance(value, int):
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
@@ -89,11 +89,17 @@ class Rectangle(Base):
     def display(self):
         """Print the rectangle instance with #"""
         print("\n" * self.__y, end="")
-        print((" " * self.__x + "#" * self.__width + "\n") * self.__height, end="")
+        print(
+            (" " * self.__x + "#" * self.__width + "\n") *
+            self.__height, end=""
+        )
 
     def __str__(self):
         """Return a string representation of the Rectangle."""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.height}"
+        return (
+            f"Rectangle {self.__x}/{self.__y} - "
+            f"{self.__width}/{self.height}"
+        )
 
     def update(self, *args, **kwargs):
         """Assign an argument to each attribute."""
@@ -106,6 +112,7 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
+
     def to_dictionary(self):
         """
         Return the dictionary representation of a Rectangle instance.
