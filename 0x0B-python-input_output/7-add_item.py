@@ -6,12 +6,13 @@ import os
 from save_to_json_file import save_to_json_file
 from load_from_json_file import load_from_json_file
 
+
 def add_item():
     """
-    This script takes command-line arguments, adds them to a list, 
+    This script takes command-line arguments, adds them to a list,
     and saves the list to file named add_item.json
     """
-    filename= "add_item.json"
+    filename = "add_item.json"
     try:
         my_list = load_from_json_file(filename)
     except FileNotFoundError:
@@ -22,6 +23,6 @@ def add_item():
 
     save_to_json_file(my_list, filename)
 
+
 if __name__ == "__main__":
     add_item()
-    
