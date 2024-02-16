@@ -1,7 +1,8 @@
--- Script to average temperature in descendign order
-SELECT city, AVG(temperature) AS average_temperature
-FROM weather_data
-WHERE MONTH(date) IN (7, 8)
-GROUP BY city
-ORDER BY average_temperature DESC
+-- Displays the 3 cities with the highest average
+-- temperatures between July and August.
+SELECT `city`, AVG(`value`) AS `avg_temp`
+FROM `temperatures`
+WHERE `month` = 7 OR `month` = 8
+GROUP BY `city`
+ORDER BY `avg_temp` DESC
 LIMIT 3;
