@@ -1,9 +1,9 @@
-$(document).ready(function(){
-	$('#toggle_header').click(function(){
-		if ($('header').hasClass('red')) {
-			$('header').removeClass('red').addClass('green');
-		} else if ($('header').hasClass('green')) {
-			$('header').removeClass('green').addClass('red');
-		}
-	});
+$(document).ready(function () {
+  $('#toggle_header').click(function () {
+    if ($('header').hasClass('red')) {
+      $('header').removeClass('red').addClass('green');
+    } else if ($('header').hasClass('green')) {
+      $('header').removeClass('green').addClass('red');
+    }
+  });
 });
